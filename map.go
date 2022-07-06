@@ -10,6 +10,9 @@ func main() {
 		20011234: "s12ASQ",
 	}
 	delete(b, 20081234)
+	var key string
+
+	fmt.Scanln(&key)
 
 	fmt.Println(b)
 	for k, v := range b {

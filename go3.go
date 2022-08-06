@@ -25,11 +25,15 @@ func main() {
 	}()
 	go func() {
 		cha <- 1
+	}()
+	go func() {
 		cha <- 2
-
 	}()
 
-	chb <- 3
+	go func() {
+		chb <- 3
+	}()
+
 	chb <- 4
 	ma := [][]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}
 	ma = append(ma, []int{13, 14, 15, 16})
@@ -39,7 +43,6 @@ func main() {
 			fmt.Printf("%d\t", v2)
 		}
 		fmt.Println()
-
 	}
 
 }
